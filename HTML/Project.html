@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The University Student Hub</title>
+</head>
+
+<body>
+    <header>
+        <h1>The University Student Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#Schedule">Schedule</a></li>
+                <li><a href="#Subjects">Subjects</a></li>
+                <li><a href="#Register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="Schedule">
+            <h2>Exam Schedule</h2>
+            <table border="1">
+                <caption>Exam Schedule For 2026</caption>
+                <tr>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>Computer Science</td>
+                    <td>2024-07-01</td>
+                    <td>10:00 AM - 12:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Business Administration</td>
+                    <td>2024-07-02</td>
+                    <td>1:00 PM - 3:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Psychology</td>
+                    <td>2024-07-03</td>
+                    <td>9:00 AM - 11:00 AM</td>
+                </tr>
+                <tr>
+                    <td>Engineering</td>
+                    <td>2024-07-04</td>
+                    <td>2:00 PM - 4:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                    <td>2024-07-05</td>
+                    <td>11:00 AM - 1:00 PM</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="Subjects">
+            <h2>Subject Details</h2>
+            <article>
+                <h3>Data Structure and Algorithms</h3>
+                <p>This course covers the fundamental concepts of data organization.</p>
+
+                <img src="https://play-lh.googleusercontent.com/9zvNJHedNg_6lOdwcodODMVsyeHKxuTIpnbBzomRGGZAp_vKVXnd5SlF8XZcXyGYjQ"
+                    alt="DSA">
+
+                <h4>Core Topics</h4>
+                <ul>
+                    <li>Asymptotic Notations</li>
+                    <li>Linked List</li>
+                    <li>Tree Traversals</li>
+                </ul>
+                <h4>Compiler Installation Steps</h4>
+                <ol>
+                    <li>Open your Terminal or Command Prompt.</li>
+                    <li>Install the GCC compiler using homebrew or an installer.</li>
+                    <li>Check installation with <code>gcc --version</code>.</li>
+                </ol>
+                <p>Access to the PDF materials <a
+                        href="https://www.scribd.com/document/498597160/Data-Structures-and-Algorithm-BSc-CSIT-Syllabus-IT-College-Nepal"
+                        target="_blank">here <- </a></p>
+            </article>
+
+        </section>
+        <section id="Register">
+            <h2>Registration Form</h2>
+            <form method="post" action="#Register">
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div><br>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="on"
+                        required>
+                </div><br>
+                <div>
+                    <label for="subject">Subject: </label>
+                    <select name="subject" id="subject">
+                        <option value="cs">Computer Science</option>
+                        <option value="ba">Business Administration</option>
+                        <option value="psy">Psychology</option>
+                        <option value="eng">Engineering</option>
+                        <option value="bio">Biology</option>
+                    </select>
+                </div><br>
+
+                <label for="feedback">Feedback:</label>
+                <textarea name="feedback" id="feedback" placeholder="Enter your feedback" cols="30" rows="5"></textarea>
+                <fieldset>
+                    <legend>Select Subjects</legend>
+                    <input type="checkbox" name="subjects" id="cs" value="Computer Science">
+                    <label for="cs">Computer Science</label><br>
+
+                    <input type="checkbox" name="subjects" id="ba" value="Business Administration">
+                    <label for="ba">Business Administration</label><br>
+
+                    <input type="checkbox" name="subjects" id="psy" value="Psychology">
+                    <label for="psy">Psychology</label><br>
+
+                    <input type="checkbox" name="subjects" id="eng" value="Engineering">
+                    <label for="eng">Engineering</label><br>
+
+                    <input type="checkbox" name="subjects" id="bio" value="Biology">
+                    <label for="bio">Biology</label><br>
+
+                </fieldset><br>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The University Student Hub. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

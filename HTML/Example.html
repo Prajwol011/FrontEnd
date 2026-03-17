@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Project</title>
+    <style>
+        nav ul{
+            display: flex;
+            gap: 25px;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+       
+    </nav>
+    <main>
+        <section>
+            <article>
+                <p>&quot;Students are the building block of a country.&quot;</p>
+            </article>
+            <form method="post" action="">
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div><br>
+                <div>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="on" required>
+                </div><br>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                </fieldset>
+                <div>
+                    <ul>
+                        <li>Hari K.C</li>
+                        <li>Raju Shah</li>
+                        <li>Sandesh Khurungbang</li>
+                        <li>Aastha Puri</li>
+                        <li>Lisa Shrestha</li>
+                    </ul>
+                </div>
+                <div>
+                    <ol>
+                        <li>
+                            <a href="https://www.google.com" target="_blank">Google</a>
+                            <li>
+                                <a href="https://www.youtube.com" target="_blank">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                            </li>
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <label for="country">Country: </label>
+                    <select name="country" id="country">
+                        <option value="nepal">Nepal</option>
+                        <option value="india">India</option>
+                        <option value="china">China</option>
+                        <option value="usa">USA</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="comment">Comment: </label><br>
+                    <textarea name="comment" id="comment" cols="50" rows="4" placeholder="Enter your comment here"></textarea>
+                </div>
+                <div>
+                    <input type="checkbox" name="checkbox" id="checkbox" required>
+                    <label for="checkbox">I agree to the terms and conditions</label>
+                </div>
+                <div>
+                    <input type="submit" value="submit">
+                </div>
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <p>All Rights Reserved - 2026</p>
+    </footer>
+</body>
+</html>

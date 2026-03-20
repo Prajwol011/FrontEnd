@@ -1,0 +1,23 @@
+.container{
+    width: 80vw;
+    margin: 20px auto;
+    background-color: lightgray;
+    padding: 20px;
+    height: 50vh;
+    display: inline-block;
+    display: flex;
+}
+.container2{
+    width: 80vw;
+    margin: 20px auto;
+    background-color: lightblue;
+    padding: 20px;
+    height: 40vh;
+}
+.container3{
+    width: 80vw;
+    margin: 20px auto;
+    background-color: lightgreen;
+    padding: 20px;
+    height: 40vh;
+}

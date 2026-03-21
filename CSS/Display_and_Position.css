@@ -1,0 +1,85 @@
+ 
+ 
+ .block-demo {
+      display: block;
+      background-color: lightgreen;
+      width: 200px;
+      height: 50px;
+      margin: 10px 0;
+    }
+     .inline-demo {
+      display: inline;
+      background-color: lightblue;
+      padding: 5px;
+    }
+     .inline-block-demo {
+      display: inline-block;
+      background-color: orange;
+      width: 100px;
+      height: 50px;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+    }
+    .hidden-demo {
+      display: none;
+    }
+    .invisible-demo {
+      visibility: hidden;
+    }
+
+    .img2 {
+            position: relative;
+            width: 200px;
+            height: auto;
+            top: 100px;
+            /* Moves down 100px */
+            left: 100px;
+            /* Moves right 100px */
+        }
+
+        .container {
+            position: relative;
+            margin-right: 850px;
+            /* Acts as reference for absolute child */
+            border: 2px solid #333;
+            padding: 40px;
+            height: 200px;
+        }
+
+        .img3 {
+            position: absolute;
+
+            width: 100px;
+            height: auto;
+            right: 0px;
+            top: 20px;
+            /* Moves down 50px from container's top */
+            left: 450px;
+            /* Moves right 50px from container's left */
+        }
+
+        /* Fixed position example */
+        .position {
+            position: fixed;
+            top: 0;
+            right: 0px;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100px;
+
+        }
+
+        /* Sticky position example */
+        .sticky {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+

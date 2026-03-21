@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Inline Example</title>
+    <link rel="stylesheet" href="Display_and_Position.css">
+    <style>
+        /* no dot (.) bhanako tag selector
+        with dot (.) bhanako class selector */
+        img {
+            position: static;
+            /*Default Position*/
+            width: 200px;
+            height: auto;
+            top: 100px;
+            /* No effect */
+            left: 100px;
+            /* No effect */
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color: aqua;">Display Inline Example</h2>
+    <p>
+        This is a
+        <span class="inline-demo">CSS Inline</span>
+        example inside a paragraph.
+    </p>
+
+    <h2>Display Block Example</h2>
+    <p>This is a paragraph before the block.</p>
+    <div class="block-demo">I am a block element.</div>
+    <p>This is a paragraph after the block.</p>
+
+    <h2>Display Inline-Block Example</h2>
+    <div class="inline-block-demo">Box 1</div>
+    <div class="inline-block-demo">Box 2</div>
+    <div class="inline-block-demo">Box 3</div>
+
+    <h2>Display None Example</h2>
+    <p>This text is visible.</p>
+    <p class="hidden-demo">This text is hidden and removed from flow.</p>
+    <p>This text is also visible.</p>
+
+    <h2>Visibility Hidden Example</h2>
+    <p>This is visible text.</p>
+    <p class="invisible-demo">This is invisible text (space remains).</p>
+    <p>This is also visible.</p>
+
+    <h2>Static Positioning Example</h2>
+    <p>This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <img src="https://images.unsplash.com/photo-1773061941695-43568f71bee9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="photo">
+    <p>This is paragraph 3</p>
+    <p>This is paragraph 4</p>
+
+    <h2>Relative Positioning Example</h2>
+    <p>This is paragraph 1</p>
+    <p>This is paragraph 2</p>
+    <img class="img2"
+        src="https://images.unsplash.com/photo-1773061941695-43568f71bee9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="photo">
+    <p>This is paragraph 3</p>
+    <p>This is paragraph 4</p>
+
+    <h2>Absolute Positioning Example</h2>
+    <div class="container">
+        <p>Prajwol Shrestha</p>
+        <p>Front-end Developer</p>
+        <img class="img3"
+            src="https://images.unsplash.com/photo-1648649459257-f8fb0bce6ec9?q=80&w=968&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="hero image">
+    </div>
+
+    <div>
+        <h2 class="position">Fixed Positioning Example</h2>
+    </div>
+
+    <div>
+        <h1 class="sticky">Sticky Header</h1>
+        <p>Scroll down...</p>
+        <p style="margin-top:1000px;">End of page</p>
+    </div>
+
+    <!--Extra: The float property in CSS is used to position an element to the left or right of its container, allowing other content (like text or inline elements) to wrap around it. This property is commonly used with images, sidebars, or layouts where text should flow beside a block element.
+
+Think of it as the “wrap text” feature in MS Word — when you insert an image, you can let the text flow beside it instead of keeping the image on its own line.
+
+Syntax
+
+float: none | left | right | inherit;
+none → Default value. The element will not float.
+left → The element floats to the left side of its container.
+right → The element floats to the right side of its container.
+inherit → Inherits the float property from its parent element.
+
+ -->
+
+</body>
+
+</html>

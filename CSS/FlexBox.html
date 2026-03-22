@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Box</title>
+    <link rel="stylesheet" href="FlexBox.css">
+</head>
+
+<body>
+    <main>
+        <h1>Flex-Box</h1>
+        <div class="container1">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+        </div>
+
+        <!-- Flex Container Properties -->
+
+        <!-- 1. flex-direction -->
+        <!-- Values:
+
+        row → Left to right (default).
+        row-reverse → Right to left.
+        column → Top to bottom.
+        column-reverse → Bottom to top. -->
+
+        <h2>Flex Direction Example</h2>
+        <div class="flex-container">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+        </div>
+
+        <!-- 2. flex-wrap: Controls whether items should wrap to the next line when space runs out. -->
+        <!-- Values:
+
+        nowrap → All items in one line (default).
+        wrap → Items wrap to next line as needed.
+        wrap-reverse → Items wrap to previous line as needed. -->
+
+        <h2>Flex Wrap Example</h2>
+        <div class="flex-container2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+
+        <!-- 3. justify-content: Aligns items along the main axis. -->
+        <!-- Values:
+
+        flex-start → Items aligned to the start of the main axis.
+        flex-end → Items aligned to the end of the main axis.
+        center → Items aligned to the center of the main axis.
+        space-between → Items distributed with equal space between them.
+        space-around → Items distributed with equal space around them.
+        space-evenly → Items distributed with equal space around them. -->
+
+        <h2>Justify Content Example</h2>
+        <div class="flex-container3">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+        </div>
+
+        <!-- 4. align-items: Aligns items along the cross axis. -->
+        <!-- Values:
+
+        flex-start → Items aligned to the start of the cross axis.
+        flex-end → Items aligned to the end of the cross axis.
+        center → Items aligned to the center of the cross axis.
+        stretch → Items stretched to fill the cross axis (default). -->
+
+        <h2>Align Items Example</h2>
+        <div class="flex-container4">
+            <div>One</div>
+            <div>Two</div>
+            <div>Three</div>
+        </div>
+
+        <!-- 5. align-content: Aligns lines of items along the cross axis when there are multiple lines. -->
+        <!-- Values:
+
+        flex-start → Lines aligned to the start of the cross axis.
+        flex-end → Lines aligned to the end of the cross axis.
+        center → Lines aligned to the center of the cross axis.
+        space-between → Lines distributed with equal space between them.
+        space-around → Lines distributed with equal space around them.
+        stretch → Lines stretched to fill the cross axis (default). -->
+
+        <h2>Align Content Example</h2>
+        <div class="flex-container5">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>       
+            <div>11</div>
+        </div>
+
+        <div>
+            <h2>Flex Items Properties</h2>
+        </div>
+
+    </main>
+</body>
+
+</html>

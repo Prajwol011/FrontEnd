@@ -145,7 +145,7 @@
  }
 
  .item5 {
-     flex-shrink: 1111;
+     flex-shrink: 2;
      width: 200px;
  }
  .item6 {
@@ -156,3 +156,18 @@
      flex-shrink: 1;
      width: 200px;
  }
+ .flex-container9 {
+  display: flex;
+  height: 200px;
+  background: lavender;
+  align-items: center;
+}
+.flex-container9 div {
+  background: orange;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+}
+.item10 {
+  align-self: flex-start;
+}

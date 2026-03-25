@@ -13,3 +13,18 @@
       padding: 20px;
       font-size: 20px;
     }
+       .layout {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "menu main aside"
+        "footer footer footer";
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 10px;
+    }
+    .header { grid-area: header; background: lightblue; padding: 20px; text-align: center; }
+    .menu   { grid-area: menu; background: lightgreen; padding: 20px; }
+    .main   { grid-area: main; background: lightyellow; padding: 20px; }
+    .aside  { grid-area: aside; background: lightpink; padding: 20px; }
+    .footer { grid-area: footer; background: lightgray; padding: 20px; text-align: center; }

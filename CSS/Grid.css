@@ -30,3 +30,22 @@
     .main   { grid-area: main; background: lightyellow; padding: 20px; }
     .aside  { grid-area: aside; background: lightpink; padding: 20px; }
     .footer { grid-area: footer; background: lightgray; padding: 20px; text-align: center; }
+
+  .grid-container2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      background: lightseagreen;
+      padding: 10px;
+    }
+    .grid-item {
+      background: white;
+      border: 1px solid #333;
+      padding: 20px;
+      text-align: center;
+    }
+    .span-columns {
+      grid-column: 1 / 3; /* Span across 2 columns */
+      background: lightblue;
+    }
+    

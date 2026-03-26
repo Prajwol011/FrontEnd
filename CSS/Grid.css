@@ -20,7 +20,9 @@
         "menu main aside"
         "footer footer footer";
       grid-template-columns: 1fr 3fr 1fr;
+      /* 1fr=> 1 part of the available space, 3fr => 3 parts of the available space */
       grid-template-rows: auto auto auto;
+      /* auto means the row's height is determined by its content — it grows or shrinks to fit whatever is inside it. You're not setting a fixed height; you're just saying "be as tall as you need to be." */
       gap: 10px;
     }
     .header { grid-area: header; background: lightblue; padding: 20px; text-align: center; }

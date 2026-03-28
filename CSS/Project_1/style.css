@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-container ul{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px; 
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Recipe Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>The Chef’s Corner</h1>
+    </header>
+    <div class="dashbord-container">
+        <aside class="sidebar">
+            <nav class="nav-container">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#myfavourites">My Favourites</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+    <main>
+        <section class="search-bar">
+            <input type="text" placeholder="search for recipes.....">
+        </section>
+        <section class="recipe-grid">
+            <article>
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="desert">
+                <div class="card-container">
+                    <span class="category">Dessert</span>
+                    <p>
+                        This decadent dessert features a warm, fudgy chocolate brownie topped with a perfectly rounded
+                        scoop of velvety vanilla ice cream. A crisp, striped wafer roll is perched across the top,
+                        adding a light crunch to the rich base. The entire sundae is being drizzled with a thick, golden
+                        caramel sauce that flows over ribbons of dark chocolate syrup, creating a beautiful contrast of
+                        textures and temperatures against the moody, dark background.
+                    </p>
+                    <button class="viwe-btn">View Recipe</button>
+                </div>
+
+            </article>
+        </section>
+        <section class="submit-recipe">
+            <h2>Submit Your Recipe</h2>
+            <form>
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" required>
+
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="veg">Vegetarian</option>
+                    <option value="meat">Meat</option>
+                    <option value="dessert">Dessert</option>
+                </select>
+
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" rows="4"></textarea>
+
+                <button type="submit">Post Recipe</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

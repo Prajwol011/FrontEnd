@@ -1,11 +1,185 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.nav-container ul{
+body {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #16213e;
+    padding: 20px 30px;
+    border-bottom: 2px solid #e94560;
+}
+
+header h1 {
+    color: #e94560;
+    font-size: 28px;
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
+/* This is the KEY fix — flexbox makes sidebar and main sit side by side */
+.dashboard-container {
+    display: flex;         /* puts sidebar and main next to each other */
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 200px;          /* fixed width for sidebar */
+    background-color: #16213e;
+    padding: 30px 0;
+    flex-shrink: 0;        /* stops sidebar from shrinking */
+}
+
+.nav-container ul {
+    list-style: none;
     display: flex;
-    gap: 20px;
+    flex-direction: column; /* vertical links for sidebar */
+    gap: 10px;
     padding: 10px;
-    margin: 10px; 
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: #a8a8b3;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.nav-container ul li a:hover {
+    background-color: #e94560;
+    color: #ffffff;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    flex: 1;               /* takes up all remaining space */
+    padding: 30px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    margin-bottom: 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid #e94560;
+    background-color: #16213e;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+/* ===== RECIPE CARD ===== */
+.recipe-grid {
+    margin-bottom: 40px;
+}
+
+.recipe-card {
+    background-color: #16213e;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 300px;
+    border: 1px solid #e94560;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.category {
+    background-color: #e94560;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.card-content p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #a8a8b3;
+    line-height: 1.6;
+}
+
+.view-btn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.view-btn:hover {
+    background-color: #c73652;
+}
+
+/* ===== SUBMIT FORM ===== */
+.submit-recipe {
+    background-color: #16213e;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 500px;
+    border: 1px solid #e94560;
+}
+
+.submit-recipe h2 {
+    margin-bottom: 20px;
+    color: #e94560;
+}
+
+.submit-recipe label {
+    display: block;
+    margin-bottom: 5px;
+    color: #a8a8b3;
+    font-size: 14px;
+}
+
+.submit-recipe input,
+.submit-recipe select,
+.submit-recipe textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e94560;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.submit-recipe button {
+    padding: 10px 25px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.submit-recipe button:hover {
+    background-color: #c73652;
 }

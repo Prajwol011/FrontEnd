@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header h1{
+            text-align: center;
+            padding: 20px;
+        }
+        header p{
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Choose Your Plan</h1>
+        <p>Simple and transparent pricing for everyone</p>
+    </header>
+    <section class="pricing-container">
+        <div class="pc-1">
+            <h3>Basic</h3>
+            <h1>$1.25</h1>
+            <ul>
+                <li>1 paid Registration Type</li>
+                <li>Cancellation & Refunds</li>
+                <li>Facebook / Disqus Conversations</li>
+                <li>Use Your Own Payment Gateway</li>
+                <li>Basic Attendee Self-Service</li>
+            </ul>
+            <button class="btn-1" style="background-color: black;">Get Started</button>
+        </div>
+        <div class="pc-2">
+            <h3>Pro</h3>
+            <h1>$1.50</h1>
+            <ul>
+                <li>Unlimited Registration Type</li>
+                <li>Cancellation & Refunds</li>
+                <li>1000 Emaiil Invites</li>
+                <li>Advance Cross-Event Analytics</li>
+                <li>Advance Attendee Self-Service</li>
+                <li>Discount Codes</li>
+            </ul>
+            <button class="btn-2" style="background-color: black;">Get Started</button>
+        </div>
+        <div class="pc-3">
+            <h3>Prepaid</h3>
+            <h1>$2.00</h1>
+            <ul>
+                <li>Unlimited Registration Type</li>
+                <li>Display "Who is Attending?"</li>
+                <li>Abandon Registration Follow-Ups</li>
+                <li>API Access</li>
+                <li>Image Gallery</li>
+                <li>Priority Support</li>
+            </ul>
+            <button class="btn-3 " style="background-color: black; ">Get Started</button>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<!-- Cons — Room for improvement ❌
+
+1. Repeated CSS code:
+You wrote the same CSS three times for pc-1, pc-2, pc-3:
+css/* You wrote this 3 times — bad practice */
+.pricing-container .pc-1 { display: flex; flex-direction: column; ... }
+.pricing-container .pc-2 { display: flex; flex-direction: column; ... }
+.pricing-container .pc-3 { display: flex; flex-direction: column; ... }
+
+/* Should be written once like this — good practice */
+.pricing-container .pc-1,
+.pricing-container .pc-2,
+.pricing-container .pc-3 {
+    display: flex;
+    flex-direction: column;
+    ...
+}
+
+2. Inline styles mixed with CSS:
+html<-- You used inline styles — bad practice -->
+<!-- <button class="btn-1" style="background-color: black;"> -->
+
+<!-- Should be in CSS file only -->
+<!-- .btn-1 { background-color: black; }
+
+3. Negative margins are a red flag:
+css/* This is a hack — avoid negative margins */
+.btn-2 { margin: -30px; }
+.btn-3 { margin: -16px; }
+This means something in your layout is slightly off. Fix the root cause instead of using negative margins.
+
+4. No highlighted "Most Popular" card:
+A real pricing page always has one card that stands out — different background color or bigger size to attract attention.
+
+5. height: 60vh is risky:
+If someone opens on a small screen the cards will look different. Better to let content decide the height:
+css/* Instead of fixed height */
+height: 60vh;
+
+/* Use min-height */
+min-height: 60vh;
+
+6. Header has no background:
+Your header blends into the page. A subtle background would make it stand out. --> 
+
+
+
+
+
+
+<!-- Fix 1 — Remove repeated CSS
+Replace your three separate card classes with this single combined one:
+css/* Remove all three separate ones and replace with this */
+.pricing-container .pc-1,
+.pricing-container .pc-2,
+.pricing-container .pc-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    min-height: 60vh;
+    border-radius: 20px;
+    padding: 25px;
+    width: 23vw;
+}
+
+Fix 2 — Remove all inline styles from HTML
+Remove style="background-color: black;" from all three buttons in HTML:
+html<-- Before ❌ -->
+<!-- <button class="btn-1" style="background-color: black;">Get Started</button>
+<button class="btn-2" style="background-color: black;">Get Started</button>
+<button class="btn-3" style="background-color: black;">Get Started</button>
+
+<-- After ✅ -->
+<!-- <button class="btn-1">Get Started</button>
+<button class="btn-2">Get Started</button>
+<button class="btn-3">Get Started</button> --> 
+<!-- And add background color in CSS instead:
+css.btn-1, .btn-2, .btn-3 {
+    background-color: black; /* ✅ moved here from inline */
+    margin-top: auto;
+    padding: 10px 30px;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 80%;
+    text-align: center;
+}
+
+Fix 3 — Remove negative margins
+Remove these two lines completely from your CSS:
+css/* Delete these ❌ */
+.btn-2 { margin: -30px; }
+.btn-3 { margin: -16px; }
+The negative margins were only needed because align-items: center was missing on pc-2 and pc-3. Since we fixed that in Fix 1 these are no longer needed! --> 

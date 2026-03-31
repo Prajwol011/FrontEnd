@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'helvetica neue';
+  color: white;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+.pricing-container{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    margin: 20px;
+    
+}
+.pricing-container .pc-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    height: 60vh;
+    border-radius: 20px;
+    padding: 25px;
+    width: 23vw;
+}
+.pricing-container .pc-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 25px;
+    width: 23vw;
+}
+.pricing-container .pc-3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 25px;
+    width: 23vw;
+}
+.pricing-container h3{
+    text-align: center;
+    padding: 20px;
+}
+.pricing-container h1{
+    text-align: center;
+    padding: 20px;  
+}
+.pricing-container ul{
+    padding: 20px;
+    margin: 20px;
+}
+.pricing-container ul li{
+    margin-bottom: 10px;
+}
+.btn-1, .btn-2, .btn-3 {
+    text-align: center;
+    margin-top: auto;    
+    padding: 10px 30px;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 80%;  
+    text-align: center;
+           
+}
+.btn-2{
+    margin: -30px;
+}
+.btn-3{
+    margin: -16px;
+}

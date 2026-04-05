@@ -24,8 +24,7 @@
     text-decoration: none;
     color: white;
     font-size: 18px;
-    padding: 30px
-    
+    padding: 30px;
 }
 .logo-container h2{
     color: white;
@@ -51,22 +50,46 @@
 }
 .first-container img{
    box-sizing: border-box;
-    border-radius: 10px;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     width: 800px;
-    height: 100px;
-    
-    
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: -20px -20px 20px -20px;
 }
 .first-container{
-    border: 2px solid black;
+    border: 2px solid rgba(0, 0, 0, 0.238);
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 10px;
-    width: 850px;
-    height: 300px;
-    margin-left: 150px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.para{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+
+.first-container h1{
+    font-size: 24px;
+    margin: 15px 0 10px 0;
+    color: #2c3e50;
+}
+
+.first-container p{
+    margin: 10px 0;
+}
+
+.first-container h5{
+    color: #1abc9c;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.first-container div:first-child{
+    margin: -20px -20px 0 -20px;
+    overflow: hidden;
 }

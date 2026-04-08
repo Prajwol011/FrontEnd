@@ -9,6 +9,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: #e0e0e062;
+  display: flex;
 }
 .sidebar{
     width: 220px;
@@ -50,6 +51,11 @@ a{
     padding: 0;
     overflow-y: auto;
 }
+.main-container {
+    flex: 1;
+    padding: 0;
+    overflow-y: auto;
+}
 .header{
     display: flex;
     justify-content: space-between;
@@ -58,4 +64,41 @@ a{
     background: white;
     border-bottom: 1px solid #e0e0e0;
     margin-bottom: 30px;
+}
+.header-left h1 {
+    font-size: 24px;
+    color: #2c2c2c;
+}
+
+.header-left p {
+    font-size: 14px;
+    color: #888888;
+    margin-top: 4px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right input {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    width: 200px;
+}
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff6b35;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
 }

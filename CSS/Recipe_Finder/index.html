@@ -3,17 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe-Finder</title>
+    <title>FoodDash Admin</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="main-container">
-        <div class="logo-container">
-            <h1>Recipe Finder</h1>
-        </div>
-        <div class="image-container">
-            <img src="https://i.pinimg.com/1200x/5f/6d/49/5f6d494467f583c43109c6b046fd4467.jpg" alt="img">
-        </div>
-    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">🍕 FoodDash</div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#">📊 Dashboard</a></li>
+                <li><a href="#">📦 Orders</a></li>
+                <li><a href="#">🍔 Menu</a></li>
+                <li><a href="#">👥 Customers</a></li>
+                <li><a href="#">🚴 Delivery</a></li>
+                <li><a href="#">💰 Revenue</a></li>
+                <li><a href="#">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <p>Welcome back, Admin 👋</p>
+            </div>
+            <div class="header-right">
+                <input type="text" placeholder="🔍 Search...">
+                <div class="admin-avatar">A</div>
+            </div>
+        </header>
+
+        <!-- STATS CARDS -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fff3e0;">🛒</div>
+                <div class="stat-info">
+                    <p>Total Orders</p>
+                    <h2>1,284</h2>
+                    <span class="stat-up">↑ 12% this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e8f5e9;">💰</div>
+                <div class="stat-info">
+                    <p>Total Revenue</p>
+                    <h2>$24,560</h2>
+                    <span class="stat-up">↑ 8% this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #e3f2fd;">👥</div>
+                <div class="stat-info">
+                    <p>Total Customers</p>
+                    <h2>3,842</h2>
+                    <span class="stat-up">↑ 5% this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #fce4ec;">🚴</div>
+                <div class="stat-info">
+                    <p>Active Drivers</p>
+                    <h2>48</h2>
+                    <span class="stat-down">↓ 2% this week</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECENT ORDERS TABLE -->
+        <section class="orders-section">
+            <div class="section-header">
+                <h2>Recent Orders</h2>
+                <button class="view-all-btn">View All</button>
+            </div>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#ORD-001</td>
+                        <td>John Smith</td>
+                        <td>Burger + Fries</td>
+                        <td>$18.50</td>
+                        <td><span class="badge delivered">Delivered</span></td>
+                        <td>10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-002</td>
+                        <td>Sarah Johnson</td>
+                        <td>Pizza Margherita</td>
+                        <td>$22.00</td>
+                        <td><span class="badge pending">Pending</span></td>
+                        <td>10:45 AM</td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-003</td>
+                        <td>Mike Davis</td>
+                        <td>Pasta + Drink</td>
+                        <td>$15.75</td>
+                        <td><span class="badge preparing">Preparing</span></td>
+                        <td>11:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-004</td>
+                        <td>Emily Wilson</td>
+                        <td>Sushi Platter</td>
+                        <td>$35.00</td>
+                        <td><span class="badge delivered">Delivered</span></td>
+                        <td>11:15 AM</td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-005</td>
+                        <td>Chris Brown</td>
+                        <td>Tacos x3</td>
+                        <td>$12.00</td>
+                        <td><span class="badge cancelled">Cancelled</span></td>
+                        <td>11:30 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- BOTTOM SECTION -->
+        <section class="bottom-section">
+
+            <!-- TOP SELLING ITEMS -->
+            <div class="top-items">
+                <h2>Top Selling Items</h2>
+                <ul>
+                    <li>
+                        <span class="item-icon">🍕</span>
+                        <div class="item-info">
+                            <p>Margherita Pizza</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%; background: #ff6b35;"></div>
+                            </div>
+                        </div>
+                        <span class="item-count">285 sold</span>
+                    </li>
+                    <li>
+                        <span class="item-icon">🍔</span>
+                        <div class="item-info">
+                            <p>Classic Burger</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 70%; background: #ff6b35;"></div>
+                            </div>
+                        </div>
+                        <span class="item-count">234 sold</span>
+                    </li>
+                    <li>
+                        <span class="item-icon">🍜</span>
+                        <div class="item-info">
+                            <p>Pasta Carbonara</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 55%; background: #ff6b35;"></div>
+                            </div>
+                        </div>
+                        <span class="item-count">189 sold</span>
+                    </li>
+                    <li>
+                        <span class="item-icon">🌮</span>
+                        <div class="item-info">
+                            <p>Chicken Tacos</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%; background: #ff6b35;"></div>
+                            </div>
+                        </div>
+                        <span class="item-count">142 sold</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- RECENT CUSTOMERS -->
+            <div class="recent-customers">
+                <h2>Recent Customers</h2>
+                <ul>
+                    <li>
+                        <div class="customer-avatar" style="background: #ff6b35;">JS</div>
+                        <div class="customer-info">
+                            <p>John Smith</p>
+                            <span>3 orders • $55.50</span>
+                        </div>
+                        <span class="customer-status active">Active</span>
+                    </li>
+                    <li>
+                        <div class="customer-avatar" style="background: #2e86ab;">SJ</div>
+                        <div class="customer-info">
+                            <p>Sarah Johnson</p>
+                            <span>7 orders • $142.00</span>
+                        </div>
+                        <span class="customer-status active">Active</span>
+                    </li>
+                    <li>
+                        <div class="customer-avatar" style="background: #43a047;">MD</div>
+                        <div class="customer-info">
+                            <p>Mike Davis</p>
+                            <span>1 order • $15.75</span>
+                        </div>
+                        <span class="customer-status new">New</span>
+                    </li>
+                    <li>
+                        <div class="customer-avatar" style="background: #8e24aa;">EW</div>
+                        <div class="customer-info">
+                            <p>Emily Wilson</p>
+                            <span>5 orders • $175.00</span>
+                        </div>
+                        <span class="customer-status active">Active</span>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+
 </body>
 </html>

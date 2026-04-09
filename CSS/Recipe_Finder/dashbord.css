@@ -102,3 +102,27 @@ a{
     font-weight: bold;
     font-size: 16px;
 }
+.stats{
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+}
+.stats-card{
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 10px;
+    width: 285px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.green-para{
+    color: rgb(74, 194, 74);
+}
+.red-para{
+    color: rgb(194, 74, 74);
+}
+.stats-card h4{
+    padding: 10px;
+}

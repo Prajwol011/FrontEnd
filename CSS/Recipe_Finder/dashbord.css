@@ -126,3 +126,25 @@ a{
 .stats-card h4{
     padding: 10px;
 }
+.order-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.orders{
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 25px;
+    width: 1203px;
+    height: 300px;
+    margin: 20px;
+    gap: 15px;
+}
+.table-container1{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px;
+}

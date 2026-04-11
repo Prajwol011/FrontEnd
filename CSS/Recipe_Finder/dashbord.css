@@ -108,43 +108,110 @@ a{
     justify-content: space-around;
 }
 .stats-card{
-    border: 2px solid black;
-    border-radius: 12px;
-    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
     width: 285px;
-    height: 100px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     margin: 10px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-.green-para{
-    color: rgb(74, 194, 74);
+
+.stats-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
 }
-.red-para{
-    color: rgb(194, 74, 74);
+
+.stats-card p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
 }
-.stats-card h4{
-    padding: 10px;
+
+.stats-card h4 {
+    padding: 0;
+    font-size: 28px;
+    color: #2c2c2c;
+    margin: 8px 0;
+}
+
+.green-para {
+    color: #4ac24a;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.red-para {
+    color: #d9534f;
+    font-size: 13px;
+    font-weight: 500;
 }
 .order-container{
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin-bottom: 0;
 }
 .orders{
     display: flex;
-    border: 2px solid black;
+    border: 1px solid #e0e0e0;
     flex-direction: column;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 25px;
-    width: 1203px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     margin: 20px;
     gap: 15px;
+    background-color: white;
 }
-.table-container1{
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    padding: 10px;
+
+.order-container h3 {
+    font-size: 18px;
+    color: #2c2c2c;
+    font-weight: 600;
 }
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-container1 {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.table-container1 .head-row {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.table-container1 th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c2c2c;
+    font-size: 14px;
+}
+
+.table-container1 td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 14px;
+}
+
+.table-container1 tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+}
+
+
+
+
+
+                

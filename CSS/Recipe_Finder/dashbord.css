@@ -161,7 +161,7 @@ a{
     flex-direction: column;
     border-radius: 8px;
     padding: 25px;
-    width: 100%;
+    width: 82vw;
     height: auto;
     margin: 20px;
     gap: 15px;
@@ -180,7 +180,7 @@ a{
 }
 
 .table-container1 {
-    width: 100%;
+    width: 82vw;
     border-collapse: collapse;
     background-color: white;
 }
@@ -209,8 +209,32 @@ a{
     background-color: #f9f9f9;
     transition: background-color 0.2s ease;
 }
+.unique {
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: #43a047;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #e8f5e9;
+}
 
+.unique1 {
+    background-color: #f0ad4e;
+    color: #d9534f;
+}
 
+.unique2 {
+    background-color: #5bc0de;
+}
+
+.unique3{
+    background-color: #fce4ec;
+    padding: 4px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #e53935;
+}
 
 
 

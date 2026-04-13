@@ -209,25 +209,26 @@ a{
     background-color: #f9f9f9;
     transition: background-color 0.2s ease;
 }
-.unique {
-    padding: 5px 10px;
+.table-container1 .unique {
+    padding: 4px 12px;
     border-radius: 12px;
     color: #43a047;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: bold;
     background-color: #e8f5e9;
 }
 
-.unique1 {
-    background-color: #f0ad4e;
-    color: #d9534f;
+.table-container1 .unique1 {
+    background-color: #fff8e1;
+    color: #f9a825;
 }
 
-.unique2 {
-    background-color: #5bc0de;
+.table-container1 .unique2 {
+    background-color: #e3f2fd;
+    color: #1e88e5;
 }
 
-.unique3{
+.table-container1 .unique3 {
     background-color: #fce4ec;
     padding: 4px 20px;
     border-radius: 20px;

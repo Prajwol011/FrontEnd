@@ -219,13 +219,21 @@ a{
 }
 
 .table-container1 .unique1 {
+    padding: 4px 12px;
+    border-radius: 12px;
     background-color: #fff8e1;
     color: #f9a825;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .table-container1 .unique2 {
+    padding: 4px 12px;
+    border-radius: 12px;
     background-color: #e3f2fd;
     color: #1e88e5;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .table-container1 .unique3 {

@@ -245,6 +245,38 @@ a{
     color: #e53935;
 }
 
+.selling-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;   
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 20px;
 
+
+}
+.selling-card{
+    display: flex;
+    border-radius: 8px;
+    padding: 25px;
+    width: 82px;
+    height: auto;
+    margin: 20px;
+    gap: 15px;
+    background-color: white;
+}
+.selling-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.selling-card .empty {
+    flex: 1;
+    border: 2px solid black;
+    width: 100;
+}
 
                 

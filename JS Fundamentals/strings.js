@@ -16,3 +16,16 @@ let obj = {
 
 let output = `The cost of ${obj.item} is ${obj.price}Rs`;
 console .log(output);
+
+let strr = "0123456";
+console.log(strr.slice(0,3)); //slice(startIndex, endIndex) - extracts a part of the string from startIndex to endIndex (not inclusive)
+
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1.concat(" ", str2)); //joins str1 and str2 with a space in between
+
+let str3 = "JavaScript is awesome";
+console.log(str3.replaceAll("a","p")); //replace J with p using str.replace(searchVal, newVal)
+ 
+let str4 = "ILoveJS";
+console.log(str4.charAt(3));

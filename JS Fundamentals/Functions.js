@@ -1,0 +1,36 @@
+function myFunction() {
+    console.log("Welcome to JS");
+    console.log("We are learning JS");
+}
+
+myFunction();
+
+function Heroes(name) {
+    //parameter -> input
+    console.log(`My favourite hero is ${name}.`);
+}
+Heroes("SpiderMan"); //Argument
+
+//default parameter
+function welcome(user = "Guest"){
+    console.log(`Welcome, ${user}`);
+}
+welcome();
+welcome("Prajwol");
+
+//Functions -> numbers, sum
+function SumOfTwo(n1, n2) {
+    s = n1+n2;
+    return s;
+}
+let val = SumOfTwo(5, 4);
+console.log(val);
+
+//return
+function addNumbers(a,b){
+    //local variables -> scope
+    return a+b;
+}
+
+let result = addNumbers(5,6);
+console.log(`Sum of two numbers is ${result}`);

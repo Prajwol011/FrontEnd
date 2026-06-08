@@ -34,3 +34,18 @@ function addNumbers(a,b){
 
 let result = addNumbers(5,6);
 console.log(`Sum of two numbers is ${result}`);
+
+//arrow function(addition)
+const add = (x,y) => {
+    return x+y;
+}
+let add1 =  add(3,5);
+console.log("The sum of two umbers is: ",add1);
+
+//arrrow function (multiplication)
+const multiplication = (p,q) => {
+    return p*q;
+}
+
+let mul = multiplication(5,6);
+console.log(`The multiplication of two numbers is ${mul}`);

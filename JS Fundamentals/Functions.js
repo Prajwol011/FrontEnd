@@ -49,3 +49,38 @@ const multiplication = (p,q) => {
 
 let mul = multiplication(5,6);
 console.log(`The multiplication of two numbers is ${mul}`);
+
+//foreach loop in arrays
+let arr = [1, 2, 3, 4, 5];
+
+arr.forEach((val,arr) => {
+    console.log(val,arr);
+})
+
+//map 
+let heros = ["Batman", "Spiderman", "Ironman"];
+
+let newarr = heros.map((val) => {
+    return val;
+});
+console.log(newarr);
+
+//filter
+let num = [1,2,3,4,5,6,7,8,9,10];
+
+let evenNum = num.filter((val) => {
+    return val%2==0;
+});
+console.log(evenNum);
+
+//reduce
+const array = [1,2,3,40];
+
+const output = array.reduce((prev,curr) => {
+    if(prev>curr){
+        return prev;
+    }else{
+        return curr;
+    }
+});
+console.log(output);

@@ -43,3 +43,35 @@ let arr = [10, 20, 30, 40, 50];
 arr.forEach((val) => {
     console.log(val * val);
 });
+
+//Qn 4 -> We are given array of marks of students. Filter out of the marks of students that stored 90+.
+
+const marks = [90, 28, 91, 96, 99, 20, 34, 55, 67];
+
+let newmarks = marks.filter((val) => {
+    if(val>90){
+        return val;
+    }
+});
+console.log(newmarks);
+
+//Qn 5 -> Take a number n as input from user. Creste an array of numbers from 1 to n. Use the reduce method to calculate sum of all numbers in the array.
+//Use the reduce method to calculate product of all numbers in the array.
+
+let n = prompt("Enter a number: ");
+let arr1 = [];
+for(let i =1; i<=n;i++){
+    arr1[i-1]=i;
+}
+console.log(arr1);
+const output = arr1.reduce((prev,curr) =>{
+    return prev + curr;
+})
+console.log("Sum = ",output);
+const product = arr1.reduce((prev,curr) => {
+    return prev*curr;
+})
+console.log("Product = ",product);
+
+
+

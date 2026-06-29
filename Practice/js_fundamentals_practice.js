@@ -45,5 +45,60 @@ checkEvenOdd(0);
 checkEvenOdd(15);
 checkEvenOdd(28);
 
-//Qn 4 -> Print numbers 1 to 30. But for multiples of 3 print "Fizz", for multiples of 5 print "Buzz", and for multiples of both 3 and 5 print "FizzBuzz". 
+//Write a function that takes a number and returns whether it's even or odd
 
+function EvenOdd(number){
+    if(number % 2 == 0){
+        console.log(number + " is an Even Number");
+    }else{
+        console.log(number + " is an Odd Number");
+    }
+}
+EvenOdd(10);
+
+//Write a for loop that prints 1 to 10
+
+for(let i=1;i<=10;i++){
+    console.log(i);
+}
+
+//Write an if/else that checks if someone can vote (age >= 18)
+
+const age = 19;
+
+function CheckAge(age){
+    if(age>=18){
+        console.log("He/She is eligble for voting.");
+    }else{
+        console.log("He/She is not eligble for voting.");
+    }
+}
+CheckAge(age);
+
+//Write a function that takes a year and returns true if it's a leap year. Rule: divisible by 4, but NOT by 100 unless also divisible by 400.
+
+function LeapYear(year) {
+    if (year % 4 === 0 && year % 100 !== 0) {
+        return true;
+    } else if (year % 400 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(LeapYear(2020)); 
+console.log(LeapYear(2021)); 
+console.log(LeapYear(2000)); 
+console.log(LeapYear(1900)); 
+
+//rite a function that takes a number N and returns the sum of all numbers from 1 to N using a loop (not a formula).
+
+let sum = 0;
+function TakeSum(N){
+    for(let i=1;i<=N;i++){
+        sum = sum + i;
+    }
+    return sum;
+}
+TakeSum(5);

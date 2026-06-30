@@ -45,7 +45,57 @@ console.log("After removing Uber and adding ola in its place: ", companies);
 companies.push("Amazon");
 console.log(companies);
 
+//Challenge 1: The Out-of-Stock Fixer
+// A local café has an array of available bakery items. However, they just ran out of "Donut" and need to replace it with "Croissant" immediately.
+
+// Your Task: 1. Find which index "Donut" is sitting at.
+// 2. Directly modify that specific index to overwrite it with "Croissant".
+// 3. Log the updated array to the console.
+
+let bakeryItems = ["Muffin", "Donut", "Cookie", "Scone"];
+
+bakeryItems.splice(1,1,"Ceoissant");
+console.log("After replacing Donut with Croissant we get: ",bakeryItems);
+
+// Challenge 2: The Price Calculator
+// You have an array tracking the price of various street food plates in rupees. You want to know how much it would cost if a customer ordered one of everything.
+// Your Task:
+// Create a variable called totalBill and set it to 0.
+// Use a for...of loop to go through the prices array.
+// Inside the loop, add each price to your totalBill.
+// After the loop finishes, log a message like: "Total cost is: X rupees".
+
+let prices = [150, 220, 90, 300, 120];
+let totalBill = 0;
+
+for(let i of prices){
+    console.log(i);
+    totalBill = totalBill+i;
+}
+console.log(`Total cost is: ${totalBill} rupees`)
+
+// Challenge 3: Dynamic Greeting Finder
+// Imagine you are building a social media dashboard. You want to print out a special custom alert for the very last user who signed up, but the list of users changes constantly.
+// Your Task:
+// Dynamically access the last item in the newUsers array using .length - 1 (do not hardcode index 3).
+// Store that last name in a variable named latestUser.
+// Log the message: "Welcome to our newest member, [name]!".
+
+let newUsers = ["Aayush", "Sita", "Niranjan", "Pooja"];
+let latestUser = newUsers[newUsers.length-1];
+
+console.log("Welcome to our newest member, ",latestUser,"!");
+
+// Challenge 4: The Selective Index Printer
+// You have a list of tourist destinations around the Kathmandu Valley. Your boss wants a clean report, but they want to see the index number alongside each place so they can sort them later.
+// Your Task:
+// Write a classic for loop (using let i = 0) to loop through the array.
+// Inside the loop, log a string formatted exactly like this: "Destination #0 is Bhaktapur", "Destination #1 is Patan", etc.
+
+let places = ["Bhaktapur", "Patan", "Kirtipur", "Nagarkot"];
 
 
-
+for(let i = 0;i<places.length;i++){
+    console.log(`Destination #${i} is ${places[i]}`); 
+}
 

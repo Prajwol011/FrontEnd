@@ -73,5 +73,29 @@ const product = arr1.reduce((prev,curr) => {
 })
 console.log("Product = ",product);
 
+// Challenge 1: The Price Doubler (.map)
+// Imagine your delivery app introduces a surge price during heavy rain in Kathmandu. You need to create a new array where every item's price is doubled.
 
+// Your Task: 1. Use .map() on the currentPrices array.
+// 2. Name your callback parameter something meaningful (like price).
+// 3. Return the price multiplied by 2.
+// 4. Log your new surgePrices array to the console.
 
+let currentPrices = [120, 150, 200, 350];
+let price = currentPrices.map(doubled => {
+    return doubled*2;
+})
+console.log(`The new sugePrices are ${price}`);
+
+// Challenge 2: The Spicy Finder (.filter)
+// You are building a food filter for a restaurant website. A user clicks a button to see only items that have the word "Spicy" in their name.
+// Your Task
+// Use .filter() on the menu array.
+// Use .includes() inside your condition to check if the dish string contains "Spicy".
+// Save the result in a variable called spicyOptions and log it.
+
+let menu = ["Spicy MoMo", "Veg Pizza", "Spicy Chowmin", "Crunchy Burger"];
+let spicyOptions = menu.filter(filtered => {
+    return filtered.includes("Spicy");
+})
+console.log("Spicy Items: ",spicyOptions);

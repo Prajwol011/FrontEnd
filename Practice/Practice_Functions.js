@@ -99,3 +99,41 @@ let spicyOptions = menu.filter(filtered => {
     return filtered.includes("Spicy");
 })
 console.log("Spicy Items: ",spicyOptions);
+
+// Challenge 3: Making HTML Lists (.map)
+// This is exactly what you will do in React! You have an array of daily tasks, and you want to wrap each one inside HTML <li> (list item) tags so they can be rendered on a web page.
+// Your Task:
+// Use .map() to transform each string in todoList.
+// Use a template literal (backticks `) to wrap the item inside <li> and </li>.
+// Store the result in a variable called htmlTasks and log it.
+
+let todoList = ["Buy groceries", "Clean the room", "Practice JavaScript"];
+let items = todoList.map(item => {
+    return `<li>${item}</li>`
+});
+console.log(items);
+
+//Scenario 1: The React Render Test (.map)
+// You have an array of recipe objects. You need to transform this data into strings that look like titles with their cook times.
+
+const myRecipes = [
+  { title: "Momo", time: 30 },
+  { title: "Chowmin", time: 20 }
+];
+const array = myRecipes.map(recipe => {
+    return `${recipe.title} takes ${recipe.time} minutes`;
+})
+console.log(array);
+
+//cenario 2: The Delete Button Test (.filter)
+// A user clicks "Delete" on the dish with the ID of 2. You need to filter out that dish completely.
+
+const originalMenu = [
+  { id: 1, name: "Veg Pizza" },
+  { id: 2, name: "Chicken Burger" },
+  { id: 3, name: "Paneer Butter" }
+];
+let updatedMenue = originalMenu.filter(menue => {
+    return menue.id != 2;
+})
+console.log(updatedMenue)

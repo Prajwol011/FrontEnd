@@ -99,3 +99,31 @@ for(let i = 0;i<places.length;i++){
     console.log(`Destination #${i} is ${places[i]}`); 
 }
 
+//practice after a break
+const fruits = ["apple", "banana", "mango"]
+
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
+
+fruits.push("orange");
+console.log(fruits);
+
+fruits.pop();
+console.log(fruits);
+
+fruits.unshift("strawberry");
+console.log(fruits);
+
+fruits.shift();
+console.log(fruits);
+
+//final one
+const numbers = [10,20,30,40,50];
+console.log(numbers[2]);
+
+numbers.push(60);
+console.log(numbers);
+
+numbers.shift();
+console.log(numbers);

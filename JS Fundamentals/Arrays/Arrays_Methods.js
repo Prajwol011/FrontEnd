@@ -87,4 +87,33 @@ languages.forEach((language) => {
 // 4. Print the final combined object AFTER the loop is totally finished
 console.log(languageLengths);
 
+//find method
 
+// Q1. Find the first number greater than 10:
+const numbers1 = [5, 12, 8, 3, 15];
+const firstGreaterThan10 = numbers1.find((number) => number > 10);
+console.log(firstGreaterThan10); 
+
+//Q2. Find the first negative number:
+const numbers2 = [4, 7, -3, 9, -1];
+const firstNegativeNumber = numbers2.find((num) => num < 0);
+console.log(firstNegativeNumber);
+
+//Q3. Find the first name that starts with "S":
+const namess = ["Prajwol", "Ram", "Sita", "Sunita"];
+const nameStartWithS = namess.find((name) => name.startsWith("S"));
+console.log(nameStartWithS);
+
+//Q4. Find the first even number:
+const numbers3 = [3, 7, 9, 4, 11];
+const EvenNumbers = numbers3.find((even) => even % 2 === 0);
+console.log(EvenNumbers);
+
+//Q5. Find the product with price above 10000 and print its name:
+const products = [
+    { name: "pen", price: 50 },
+    { name: "bag", price: 1500 },
+    { name: "laptop", price: 80000 }
+];
+const priceabove1000 = products.find((name) => name.price>10000);
+console.log(priceabove1000.name);

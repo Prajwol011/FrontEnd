@@ -66,3 +66,10 @@ console.log(heroes1);
 //unshift or shift
 let val = marvelHeroes.shift();
 console.log("Deleted: ",val);
+
+//reduce
+const arr = [1,2,3,40];
+const output = arr.reduce((prev,curr) => {
+    return prev+curr;
+});
+console.log(output);

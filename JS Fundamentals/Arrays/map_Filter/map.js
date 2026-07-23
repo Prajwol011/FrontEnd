@@ -38,3 +38,21 @@ const books = [
 const newbooks = books.map((book) => ({ ...book, pages: `${book.pages} pages` }));
 console.log(newbooks);
 
+//Question 7: Create an array of numbers [1, 2, 3, 4, 5]. Use map to create a new array of objects where each object has number and squared properties.
+const numbers2 = [1, 2, 3, 4, 5];
+const newarr1 = numbers2.map((number) => ({
+  number: number, squared: number**2
+}));
+console.log(newarr1);
+
+//Question 8: Create an array of user objects: Use map to create a new array where each object has a fullName property (combined first and last name in title case).
+const users = [
+  { firstName: 'alice', lastName: 'smith' },
+  { firstName: 'bob', lastName: 'jones' },
+  { firstName: 'charlie', lastName: 'brown' }
+];
+const newUser = users.map((newname) => ({
+    fullName: `${newname.firstName[0].toUpperCase() + newname.firstName.slice(1)} ${newname.lastName[0].toUpperCase() + newname.lastName.slice(1)}`
+}));
+
+console.log(newUser);

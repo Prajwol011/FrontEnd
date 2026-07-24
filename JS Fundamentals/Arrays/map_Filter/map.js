@@ -56,3 +56,19 @@ const newUser = users.map((newname) => ({
 }));
 
 console.log(newUser);
+
+//Question 9: Create an array of prices [10.5, 25.3, 15.7, 8.9]. Use map to create a new array where each price has a currency symbol added (e.g., "$10.5").
+const prices = [10.5, 25.3, 15.7, 8.9];
+const newPrice = prices.map((price) => `$${price}`);
+console.log(newPrice);
+
+//Question 10: Create an array of objects representing orders:Use map to create a new array with objects containing the product name and total cost (quantity × price).
+const orders = [
+  { product: 'Laptop', quantity: 2, price: 1000 },
+  { product: 'Mouse', quantity: 5, price: 25 },
+  { product: 'Keyboard', quantity: 1, price: 75 }
+];
+const final = orders.map((order) => ({
+  product: order.product, totalCost: order.quantity*order.price
+}))
+console.log(final);

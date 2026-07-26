@@ -40,3 +40,18 @@ console.log(availabel);
 const num = [15, 23, 8, 42, 35, 6, 50];
 const inbetween = num.filter((between) => between >= 20 && between <= 40);
 console.log(inbetween);
+
+//Question 7: Create an array of objects representing employees:Use filter to create a new array with only IT department employees.
+const employees = [
+  { name: 'Alice', department: 'IT', salary: 80000 },
+  { name: 'Bob', department: 'HR', salary: 60000 },
+  { name: 'Charlie', department: 'IT', salary: 85000 }
+];
+const filtered = employees.filter((it) => it.department === 'IT');
+console.log(filtered);
+
+//Question 8: Create an array of strings ['javascript', 'python', 'c', 'go', 'typescript', 'rust']. Use filter to create a new array with only programming languages that have more than 6 characters.
+const languages = ['javascript', 'python', 'c', 'go', 'typescript', 'rust'];
+const newlang = languages.filter((new1) => new1.length > 6);
+console.log(newlang);
+

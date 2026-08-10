@@ -29,3 +29,9 @@ console.log(str3.replaceAll("a","p")); //replace J with p using str.replace(sear
  
 let str4 = "ILoveJS";
 console.log(str4.charAt(3));
+
+const text = "Hello World";
+console.log(text.slice(0, 5));      // "Hello"
+console.log(text.slice(6));         // "World" (from position 6 to end)
+console.log(text.slice(-5));        // "World" (last 5 characters)
+console.log(text.slice(0, -6));     // "Hello" (everything except last 6)

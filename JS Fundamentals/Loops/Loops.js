@@ -49,3 +49,4 @@ let obj = {
 for(let key in obj){ //iterator -> keys
     console.log("Key = ", key, " Value = ", obj[key]);
 }
+

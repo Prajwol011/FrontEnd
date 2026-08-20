@@ -40,3 +40,51 @@ const user = {
 };
 
 console.log(user.address.country);
+
+//Q6. Update a nested property:
+const employee = {
+    name: "Ram",
+    salary: {
+        basic: 30000,
+        bonus: 5000,
+        
+    }
+};
+// update bonus to 8000
+// add a new property "total" inside salary that is basic + bonus
+// print the full salary object
+
+employee.salary.bonus = 8000;
+employee.salary.total = employee.salary.bonus+employee.salary.basic;
+
+console.log(employee.salary);
+
+//Q7. Array of objects — access and print:
+const students = [
+    { name: "Prajwol", score: 90 },
+    { name: "Ram", score: 75 },
+    { name: "Sita", score: 85 }
+];
+// loop through and print each student's name and score
+// output: "Prajwol scored 90"
+
+for(const student of students){
+    console.log(`${student.name} scored ${student.score}`);
+}
+
+//Q8. Array of objects — combine with filter:
+const products = [
+    { name: "phone", price: 20000, inStock: true },
+    { name: "laptop", price: 80000, inStock: false },
+    { name: "watch", price: 5000, inStock: true },
+    { name: "tablet", price: 40000, inStock: false }
+];
+// filter only products that are inStock
+// print the name and price of each available product
+
+const availableProducts = products.filter(product => product.inStock);
+
+for (const product of availableProducts) {
+    console.log(`${product.name}: Rs. ${product.price}`);
+}
+

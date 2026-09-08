@@ -1,0 +1,282 @@
+
+<style>
+* { box-sizing: border-box; }
+.wrap { padding: 0.5rem 0 1rem; }
+.you-are-here { background: var(--color-background-info); border-radius: 10px; padding: 10px 14px; margin-bottom: 1rem; font-size: 13px; color: var(--color-text-info); display: flex; gap: 8px; align-items: center; }
+.progress-wrap { background: var(--color-background-secondary); border-radius: 10px; padding: 12px 16px; margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; }
+.prog-bar-bg { flex: 1; height: 6px; background: var(--color-border-tertiary); border-radius: 3px; overflow: hidden; }
+.prog-bar-fill { height: 100%; border-radius: 3px; background: var(--color-text-success); transition: width 0.3s; }
+.reset-btn { font-size: 11px; color: var(--color-text-tertiary); cursor: pointer; background: none; border: none; text-decoration: underline; white-space: nowrap; }
+.phase-wrap { margin-bottom: 1rem; }
+.phase-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px 10px 0 0; border: 0.5px solid var(--color-border-tertiary); border-bottom: none; background: var(--color-background-secondary); cursor: pointer; user-select: none; }
+.phase-header:hover { opacity: 0.9; }
+.phase-label { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+.phase-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0; flex: 1; }
+.phase-meta { font-size: 11px; color: var(--color-text-secondary); white-space: nowrap; }
+.phase-chevron { font-size: 15px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+.phase-chevron.open { transform: rotate(180deg); }
+.phase-body { border: 0.5px solid var(--color-border-tertiary); border-radius: 0 0 10px 10px; background: var(--color-background-primary); padding: 0.25rem 0; display: none; }
+.phase-body.open { display: block; }
+.topic-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 14px; border-bottom: 0.5px solid var(--color-border-tertiary); cursor: pointer; transition: background 0.1s; }
+.topic-row:last-child { border-bottom: none; }
+.topic-row:hover { background: var(--color-background-secondary); }
+.topic-row.done { opacity: 0.45; }
+.topic-row.done .topic-name { text-decoration: line-through; }
+.cb { width: 16px; height: 16px; border-radius: 4px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-primary); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+.cb.checked { background: var(--color-background-success); border-color: var(--color-border-success); }
+.cb.checked::after { content:''; display:block; width:8px; height:5px; border-left:1.5px solid var(--color-text-success); border-bottom:1.5px solid var(--color-text-success); transform:rotate(-45deg) translateY(-1px); }
+.topic-content { flex: 1; min-width: 0; }
+.topic-name { font-size: 13px; color: var(--color-text-primary); margin: 0 0 1px; font-weight: 500; }
+.topic-note { font-size: 11px; color: var(--color-text-secondary); margin: 0; line-height: 1.4; }
+.tag { font-size: 10px; font-weight: 500; padding: 1px 6px; border-radius: 4px; margin-left: 5px; vertical-align: middle; white-space: nowrap; }
+.tag-must { background:#FCEBEB; color:#A32D2D; }
+.tag-skip { background:#F1EFE8; color:#5F5E5A; }
+.tag-proj { background:#E1F5EE; color:#085041; }
+.tag-here { background:#FFF3CD; color:#856404; }
+.divider { display:flex; align-items:center; justify-content:center; padding:4px 0; color:var(--color-text-tertiary); font-size:13px; }
+.phase-progress { font-size: 11px; color: var(--color-text-tertiary); margin-left: 4px; }
+</style>
+
+<div class="wrap">
+
+<div class="you-are-here">
+  <i class="ti ti-map-pin" aria-hidden="true"></i>
+  <span><strong>You are here:</strong> map & filter — actively practicing. Next: objects, then ES6, then DOM.</span>
+</div>
+
+<div class="progress-wrap">
+  <span style="font-size:13px;font-weight:500;color:var(--color-text-primary);">Overall progress</span>
+  <div class="prog-bar-bg"><div class="prog-bar-fill" id="prog-fill" style="width:0%"></div></div>
+  <span style="font-size:13px;color:var(--color-text-secondary);"><span id="done-count">0</span>/<span id="total-count">0</span></span>
+  <button class="reset-btn" onclick="resetAll()">Reset all</button>
+</div>
+
+<div id="roadmap"></div>
+</div>
+
+<script>
+const phases = [
+  {
+    id:"p1", label:"Phase 1", salary:"$60–100k", labelStyle:"background:#E6F1FB;color:#0C447C;",
+    title:"JS Fundamentals", meta:"Month 1 · Week 1–2", startOpen:false,
+    topics:[
+      {id:"f1", name:"How JS works in the browser", note:"Internal vs external scripts, console.log"},
+      {id:"f2", name:"Variables — let and const", note:"const by default, let when value changes — forget var"},
+      {id:"f3", name:"Data types", note:"string, number, boolean, null, undefined"},
+      {id:"f4", name:"Operators", note:"Arithmetic, comparison (===), logical (&&, ||, !)"},
+      {id:"f5", name:"If / else / ternary", note:"Confirmed solid — leap year, grade calculator exercises done"},
+      {id:"f6", name:"Loops — for, while, for...of", note:"Confirmed solid — countdown, multiplication table done"},
+      {id:"f7", name:"Functions + arrow functions", note:"return vs console.log fully mastered"},
+    ]
+  },
+  {
+    id:"p2", label:"Phase 2", labelStyle:"background:#E6F1FB;color:#0C447C;",
+    title:"Arrays & Data", meta:"Month 1 · Week 3–4", startOpen:true,
+    topics:[
+      {id:"a1", name:"Arrays — create, access, loop", note:"push, pop, shift, unshift — completed"},
+      {id:"a2", name:"forEach", note:"Concept only — done", tag:"skip"},
+      {id:"a3", name:"find", note:"5 questions done — concept solid"},
+      {id:"a4", name:"map", note:"Deep practice — currently working on this", tag:"must", here:true},
+      {id:"a5", name:"filter", note:"Deep practice — do right after map", tag:"must"},
+      {id:"a6", name:"reduce", note:"One question done — come back much later", tag:"skip"},
+      {id:"a7", name:"Objects — key-value pairs", note:"Create, read, update, nested, arrays of objects", tag:"must"},
+      {id:"a8", name:"String methods", note:"includes, slice, replace, toUpperCase, trim"},
+      {id:"a9", name:"Math object", note:"Math.random(), Math.floor() — useful for projects"},
+    ]
+  },
+  {
+    id:"p3", label:"Phase 3", labelStyle:"background:#E1F5EE;color:#085041;",
+    title:"ES6 Modern Syntax", meta:"Month 1 · Week 4 — do before DOM", startOpen:false,
+    topics:[
+      {id:"e1", name:"Template literals", note:"`Hello ${name}` — already using naturally", tag:"must"},
+      {id:"e2", name:"Destructuring — objects & arrays", note:"const {name} = user — used in every React component", tag:"must"},
+      {id:"e3", name:"Spread operator", note:"[...arr] and {...obj} — critical for React state updates", tag:"must"},
+      {id:"e4", name:"Rest parameters", note:"function sum(...nums) — less critical, good to know"},
+      {id:"e5", name:"ES6 modules — import & export", note:"How every React file is structured — don't skip", tag:"must"},
+      {id:"e6", name:"Optional chaining & short-circuit", note:"user?.address and value || 'default' — prevents crashes"},
+    ]
+  },
+  {
+    id:"p4", label:"Phase 4", labelStyle:"background:#FAEEDA;color:#633806;",
+    title:"DOM Manipulation", meta:"Month 2 · Week 1–3", startOpen:false,
+    topics:[
+      {id:"d1", name:"What the DOM is", note:"The browser's live version of your HTML — JS controls it"},
+      {id:"d2", name:"Selecting elements", note:"querySelector and querySelectorAll — use only these two", tag:"must"},
+      {id:"d3", name:"Changing content & styles", note:"textContent, innerHTML, classList.add/remove/toggle", tag:"must"},
+      {id:"d4", name:"Event listeners", note:"addEventListener('click', fn) — heartbeat of all interactivity", tag:"must"},
+      {id:"d5", name:"Forms — input values & preventDefault", note:"Read what user typed, stop page reloads", tag:"must"},
+      {id:"d6", name:"DOM traversing", note:"parentElement, children — skim only, low priority", tag:"skip"},
+      {id:"d7", name:"localStorage", note:"Save data between sessions — use in to-do app"},
+      {id:"d8", name:"setTimeout & setInterval", note:"Run code after delay or repeatedly — useful for clocks"},
+    ]
+  },
+  {
+    id:"p4p", label:"Phase 4 Projects", labelStyle:"background:#E1F5EE;color:#085041;",
+    title:"DOM Projects — build these", meta:"Month 2 · ongoing", startOpen:false,
+    topics:[
+      {id:"dp1", name:"Counter app", note:"First real DOM project — click buttons, update a number", tag:"proj"},
+      {id:"dp2", name:"Calculator", note:"Operators, display logic, clearing input", tag:"proj"},
+      {id:"dp3", name:"To-do list app", note:"Add, delete, complete, filter tasks + localStorage", tag:"proj"},
+      {id:"dp4", name:"Quiz app", note:"Questions, score counter, timer, results screen", tag:"proj"},
+    ]
+  },
+  {
+    id:"p5", label:"Phase 5", labelStyle:"background:#EEEDFE;color:#3C3489;",
+    title:"Async JS & APIs", meta:"Month 3 · Week 1–2", startOpen:false,
+    topics:[
+      {id:"as1", name:"Callbacks — concept only", note:"Understand why they exist. One day max."},
+      {id:"as2", name:"Promises — .then() and .catch()", note:"Understand before jumping to async/await"},
+      {id:"as3", name:"async / await", note:"The clean modern way to fetch data", tag:"must"},
+      {id:"as4", name:"fetch() API", note:"Call any URL and get real data back", tag:"must"},
+      {id:"as5", name:"JSON — parse & stringify", note:"APIs send JSON — convert it to usable JS objects"},
+      {id:"as6", name:"try / catch error handling", note:"Always wrap fetches in try/catch", tag:"must"},
+    ]
+  },
+  {
+    id:"p5p", label:"Phase 5 Projects", labelStyle:"background:#E1F5EE;color:#085041;",
+    title:"API Projects — build these", meta:"Month 3 · ongoing", startOpen:false,
+    topics:[
+      {id:"ap1", name:"Weather app", note:"OpenWeatherMap API (free) — most impressive beginner project", tag:"proj"},
+      {id:"ap2", name:"Movie search app", note:"OMDB API — search, display results, save favourites", tag:"proj"},
+    ]
+  },
+  {
+    id:"p6", label:"Phase 6", labelStyle:"background:#EEEDFE;color:#3C3489;",
+    title:"Git & GitHub", meta:"Month 3 · Week 3 — before React", startOpen:false,
+    topics:[
+      {id:"g1", name:"git init, add, commit, push", note:"Every project from now on lives on GitHub", tag:"must"},
+      {id:"g2", name:"Writing a good README", note:"Employers read these — explain what your project does"},
+      {id:"g3", name:"Deploying to Vercel", note:"Free, one click — every project needs a live link", tag:"must"},
+    ]
+  },
+  {
+    id:"p7", label:"Phase 7", labelStyle:"background:#E1F5EE;color:#085041;",
+    title:"React — you are ready here", meta:"Month 4", startOpen:false,
+    topics:[
+      {id:"r1", name:"Components & JSX", note:"Everything in React is a component. JSX is HTML in JS."},
+      {id:"r2", name:"Props", note:"Pass data from parent to child component"},
+      {id:"r3", name:"useState hook", note:"How React remembers and updates data on screen", tag:"must"},
+      {id:"r4", name:"useEffect hook", note:"Run code when something changes — used for fetching data", tag:"must"},
+      {id:"r5", name:"Handling events in React", note:"onClick, onChange — your DOM knowledge applies directly"},
+      {id:"r6", name:"Lists & keys with .map()", note:"Your map skills pay off here — renders arrays of data", tag:"must"},
+      {id:"r7", name:"React Router — navigation", note:"Multiple pages — add after basics feel solid"},
+      {id:"r8", name:"TypeScript basics", note:"Add after 2–3 months of React — employers love this"},
+      {id:"r9", name:"Next.js basics", note:"Most in-demand React framework — learn after plain React"},
+    ]
+  },
+  {
+    id:"p_skip", label:"Skip", labelStyle:"background:#F1EFE8;color:#5F5E5A;",
+    title:"Skip until 6+ months into React", meta:"Don't get distracted", startOpen:false,
+    topics:[
+      {id:"sk1", name:"Classes & constructor functions", note:"Not used in modern React — outdated pattern", tag:"skip"},
+      {id:"sk2", name:"Prototypes", note:"Not needed for frontend work right now", tag:"skip"},
+      {id:"sk3", name:"Generators & iterators", note:"Advanced and niche", tag:"skip"},
+      {id:"sk4", name:"WebSockets", note:"Real-time apps — a year away from needing this", tag:"skip"},
+      {id:"sk5", name:"Canvas & WebGL", note:"Very niche unless building games", tag:"skip"},
+      {id:"sk6", name:"Design patterns", note:"Confusing and demotivating right now — come back later", tag:"skip"},
+    ]
+  }
+];
+
+const preChecked = ["f1","f2","f3","f4","f5","f6","f7","a1","a2","a3","a6","e1"];
+
+function getTag(tag, here) {
+  if (here) return '<span class="tag tag-here">← you are here</span>';
+  if (!tag) return '';
+  if (tag==='must') return '<span class="tag tag-must">critical</span>';
+  if (tag==='skip') return '<span class="tag tag-skip">skim only</span>';
+  if (tag==='proj') return '<span class="tag tag-proj">project</span>';
+  return '';
+}
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem('roadmap_v4') || '{}'); } catch(e) { return {}; }
+}
+function saveState(s) {
+  try { localStorage.setItem('roadmap_v4', JSON.stringify(s)); } catch(e) {}
+}
+
+let state = loadState();
+preChecked.forEach(id => { if (state[id] === undefined) state[id] = true; });
+saveState(state);
+
+function updateProgress() {
+  let total = 0, done = 0;
+  phases.forEach(ph => ph.topics.forEach(t => {
+    if (t.tag !== 'skip') { total++; if (state[t.id]) done++; }
+  }));
+  document.getElementById('done-count').textContent = done;
+  document.getElementById('total-count').textContent = total;
+  document.getElementById('prog-fill').style.width = Math.round((done/total)*100) + '%';
+}
+
+function toggleTopic(id, row, cb) {
+  state[id] = !state[id];
+  saveState(state);
+  row.classList.toggle('done', state[id]);
+  cb.classList.toggle('checked', state[id]);
+  row.setAttribute('aria-checked', state[id] ? 'true' : 'false');
+  updateProgress();
+}
+
+function resetAll() {
+  state = {};
+  saveState(state);
+  document.querySelectorAll('.topic-row').forEach(r => { r.classList.remove('done'); r.setAttribute('aria-checked','false'); });
+  document.querySelectorAll('.cb').forEach(c => c.classList.remove('checked'));
+  updateProgress();
+}
+
+function render() {
+  const container = document.getElementById('roadmap');
+  phases.forEach((ph, pi) => {
+    if (pi > 0 && ph.id !== 'p_skip') {
+      const d = document.createElement('div');
+      d.className = 'divider';
+      d.innerHTML = '<i class="ti ti-arrow-down" aria-hidden="true"></i>';
+      container.appendChild(d);
+    }
+    const wrap = document.createElement('div');
+    wrap.className = 'phase-wrap';
+
+    const header = document.createElement('div');
+    header.className = 'phase-header';
+    header.innerHTML = `<span class="phase-label" style="${ph.labelStyle}">${ph.label}</span><p class="phase-title">${ph.title}</p><span class="phase-meta">${ph.meta}</span><i class="ti ti-chevron-down phase-chevron ${ph.startOpen ? 'open' : ''}" id="phch-${ph.id}" aria-hidden="true"></i>`;
+    header.addEventListener('click', () => {
+      const body = document.getElementById('phbody-' + ph.id);
+      const ch = document.getElementById('phch-' + ph.id);
+      body.classList.toggle('open');
+      ch.classList.toggle('open');
+    });
+    wrap.appendChild(header);
+
+    const body = document.createElement('div');
+    body.className = 'phase-body' + (ph.startOpen ? ' open' : '');
+    body.id = 'phbody-' + ph.id;
+
+    ph.topics.forEach(t => {
+      const row = document.createElement('div');
+      row.className = 'topic-row' + (state[t.id] ? ' done' : '');
+      row.setAttribute('role','checkbox');
+      row.setAttribute('aria-checked', state[t.id] ? 'true' : 'false');
+      row.setAttribute('tabindex','0');
+      const cb = document.createElement('div');
+      cb.className = 'cb' + (state[t.id] ? ' checked' : '');
+      const content = document.createElement('div');
+      content.className = 'topic-content';
+      content.innerHTML = `<p class="topic-name">${t.name}${getTag(t.tag, t.here)}</p><p class="topic-note">${t.note}</p>`;
+      row.appendChild(cb);
+      row.appendChild(content);
+      row.addEventListener('click', () => toggleTopic(t.id, row, cb));
+      row.addEventListener('keydown', e => { if(e.key===' '||e.key==='Enter'){e.preventDefault();row.click();} });
+      body.appendChild(row);
+    });
+
+    wrap.appendChild(body);
+    container.appendChild(wrap);
+  });
+  updateProgress();
+}
+
+render();
+</script>

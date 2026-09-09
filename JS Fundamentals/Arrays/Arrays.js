@@ -73,3 +73,39 @@ const output = arr.reduce((prev,curr) => {
     return prev+curr;
 });
 console.log(output);
+
+const students = [
+    { name: "Prajwol", score: 90 },
+    { name: "Ram", score: 45 },
+    { name: "Sita", score: 78 },
+    { name: "Hari", score: 32 }
+];
+const result = students.map((res) => {
+    return `${res.name} scored ${res.score}`
+}) 
+console.log(result)
+
+const products = [
+    { name: "phone", price: 20000, inStock: true },
+    { name: "laptop", price: 80000, inStock: false },
+    { name: "watch", price: 5000, inStock: true },
+    { name: "tablet", price: 40000, inStock: false },
+    { name: "earbuds", price: 3000, inStock: true }
+];
+const filtered = products.filter((prod) => prod.inStock);
+const filtered2 = products.filter((prod2) => prod2.price>10000);
+const filtered3 = products.filter((prod3) => prod3.inStock && prod3.price<10000);
+
+console.log(filtered);
+console.log(filtered2);
+console.log(filtered3);
+
+const products1 = [
+    { name: "phone", price: 20000, inStock: true },
+    { name: "laptop", price: 80000, inStock: false },
+    { name: "watch", price: 5000, inStock: true },
+    { name: "tablet", price: 40000, inStock: false },
+    { name: "earbuds", price: 3000, inStock: true }
+];
+const filtered_final = products1.filter(prod => prod.inStock).map(prod => prod.name);
+console.log(filtered_final);

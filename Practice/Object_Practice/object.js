@@ -88,3 +88,123 @@ for (const product of availableProducts) {
     console.log(`${product.name}: Rs. ${product.price}`);
 }
 
+//q9. Create & Read
+// Create an object named book with the following properties:
+// title: "The Hobbit"
+// author: "J.R.R. Tolkien"
+// pages: 310
+
+// Questions:
+// Log the title using dot notation.
+// Log the author using bracket notation.
+// Create a variable const property = "pages"; and use it to log the page count.
+
+const book = {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    pages: 310
+};
+console.log(book.title);
+console.log(book["author"]);
+
+const property = 'pages';
+console.log(book[property])
+
+//q10.Update, Add & Delete
+// Starting with this object:
+// JavaScript
+// const laptop = {
+//   brand: "Dell",
+//   ram: "8GB",
+//   inStock: true
+// };
+// Questions:
+// Update ram to "16GB".
+// Add a new property storage set to "512GB SSD".
+// Delete the inStock property.
+// Log the modified object.
+
+const laptop ={
+    brand: "Dell",
+    ram: "8GB",
+    instock: true
+};
+console.log("Before Updating",laptop);
+
+laptop.ram = "16GB";
+laptop.SSD = "512GB SSD";
+
+delete laptop.instock;
+
+console.log("After Updating",laptop);
+
+
+//q11.Nested Objects
+// Working with this nested object:
+// JavaScript
+// const user = {
+//   id: 101,
+//   profile: {
+//     fullName: "Aisha Khan",
+//     address: {
+//       city: "Kathmandu",
+//       zip: 44600
+//     }
+//   }
+// };
+// Questions:
+// How do you log "Aisha Khan"?
+// How do you change city from "Kathmandu" to "Pokhara"?
+// Add a new property country: "Nepal" inside the address object.
+
+const user2= {
+    id: 101,
+    profile: {
+        fullName: "Aisha Khan",
+        address: {
+            city: "Kathmandu",
+            zip: 44600
+        }
+    }
+};
+
+console.log(user2.profile.fullName);
+user2.profile.address.city = "Pokhara";
+user2.profile.address.country = "Nepal";
+
+console.log(user2);
+
+//q12. Array of Objects
+// working with this dataset:
+// const products = [
+//   { id: 1, name: "Laptop", price: 1000, inStock: true },
+//   { id: 2, name: "Phone", price: 600, inStock: false },
+//   { id: 3, name: "Headphones", price: 150, inStock: true }
+// ];
+// Questions:
+
+// How do you log the name of the second product ("Phone")?
+
+// How do you update the inStock status of "Phone" to true?
+
+// How would you loop through the array and log only the names of products that are inStock: true?
+
+
+const productss = [
+    {id: 1, name: "Laptop", price: 1000, instock: true },
+    {id: 2, name: "Phone", price: 600, instock: false },
+    {id: 3, name: "Headphones", price: 150, instock: true },
+];
+
+console.log(productss[1]);
+
+productss[1].instock = true;
+console.log(productss)
+
+productss.forEach((product) => {
+    if(product.instock){
+        console.log(product.name)
+    }
+});
+
+

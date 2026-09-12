@@ -32,3 +32,29 @@ const person = {
 };
 console.log(person.address.street);
 
+//Q5. Loop through this object and print every key and value:
+const laptop = { brand: "Dell", ram: "16GB", price: 85000 };
+
+for (let key in laptop) {
+  console.log(key + ": " + laptop[key]);
+}
+
+//qn6. Write a for...in loop that prints each subject and its mark in this format:
+const marks = {
+  math: 85,
+  science: 92,
+  english: 78
+};
+for(let key in marks){
+    console.log(key + "=" + marks[key]);
+}
+
+//Q6. Array of objects — use a loop to print each student's name and score:
+const students = [
+    { name: "Prajwol", score: 90 },
+    { name: "Ram", score: 75 },
+    { name: "Sita", score: 85 }
+];
+for(let key of students){
+    console.log(`name: ${key.name}, score: ${key.score}`)
+}

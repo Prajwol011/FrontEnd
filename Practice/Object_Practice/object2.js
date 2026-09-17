@@ -58,3 +58,13 @@ const students = [
 for(let key of students){
     console.log(`name: ${key.name}, score: ${key.score}`)
 }
+
+//Q7. Combine objects with filter — filter students who passed (score above 60):
+const students2 = [
+    { name: "Prajwol", score: 90 },
+    { name: "Ram", score: 45 },
+    { name: "Sita", score: 85 },
+    { name: "Hari", score: 30 }
+];
+const passedStudents = students2.filter( student => student.score > 60);
+console.log(passedStudents);

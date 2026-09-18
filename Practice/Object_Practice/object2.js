@@ -68,3 +68,14 @@ const students2 = [
 ];
 const passedStudents = students2.filter( student => student.score > 60);
 console.log(passedStudents);
+
+//Q8. Combine objects with map — return an array of strings like "Prajwol — Rs 20000":
+const products = [
+    { name: "phone", price: 20000 },
+    { name: "watch", price: 5000 },
+    { name: "laptop", price: 80000 }
+];
+const arr = products.map(product => {
+    return `${product.name} - Rs ${product.price}`
+})
+console.log(arr);

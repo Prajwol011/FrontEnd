@@ -16,3 +16,16 @@ const product = { name: "phone", price: 20000, inStock: true };
 // update price to 25000 using spread
 const updatedproduct = {...product, price: 25000};
 console.log(updatedproduct);
+
+//rest parameters
+function sum(...numbers) {
+    let total = 0;
+    for (let num of numbers) {
+        total = total + num;
+    }
+    return total;
+}
+
+console.log(sum(1, 2, 3));        // 6
+console.log(sum(10, 20, 30, 40)); // 100
+console.log(sum(5));              // 5

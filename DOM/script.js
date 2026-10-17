@@ -1,3 +1,4 @@
-console.log("hello");
-alert("Hello welcome to DOM");
+let mydiv = document.querySelector("div");
+console.dir(mydiv);
 
+let heading = document.querySelector("h1")

@@ -1,14 +1,21 @@
-let heading = document.querySelector("h2");
-console.dir(heading);
+const title = document.querySelector("#title");
+const btn = document.querySelector("#btn");
+const para = document.querySelector("#counter");
 
-heading.innerText = heading.innerText + " from Apna College Students";
+let clicked = false;
+let count = 0;
 
-let divs = document.querySelectorAll(".box");
+btn.addEventListener("click", function () {
+    if (clicked === false) {
+        title.textContent = "You clicked me!";
+        btn.textContent = "Click again";
+        clicked = true;
+    } else {
+        title.textContent = "Hello World";
+        btn.textContent = "Click Me";
+        clicked = false;
+    }
 
-let idx = 1;
-for(div of divs){
-    div.innerText = `new unique value ${idx}`;
-    idx ++;
-}
-  
-
+    count++;
+    para.textContent = `You have clicked ${count} times`;
+});

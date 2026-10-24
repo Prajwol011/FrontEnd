@@ -24,3 +24,4 @@ reset.addEventListener("click", function() {
     countElement.style.color = "red";
 
 });
+
